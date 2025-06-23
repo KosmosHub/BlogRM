@@ -1,0 +1,492 @@
+/* ==========================
+   🌑 Estilos Base y Variables
+========================== */
+:root {
+  --negro: #0f0f0f;
+  --morado: #7C3AED;
+  --dorado: #FFD700;
+  --blanco: #f5f5f5;
+  --gris-suave: #ccc;
+  --fuente-base: 'Segoe UI', sans-serif;
+}
+
+/* Reset general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-base);
+  background-color: var(--negro);
+  color: var(--blanco);
+  line-height: 1.6;
+}
+
+/* ==========================
+   ✨ Sección Hero
+========================== */
+/* 🎯 Sección principal "Hero" */
+.hero {
+  display: flex; /* Usamos flexbox para alinear elementos */
+  flex-direction: column; /* Alineamos en columna (de arriba a abajo) */
+  align-items: center; /* Centramos horizontalmente */
+  justify-content: center; /* Centramos verticalmente */
+  text-align: center; /* Centramos texto */
+  padding: 5rem 1rem; /* Espaciado interno (arriba/abajo y costados) */
+  background-color: var(--negro); /* Fondo oscuro según paleta */
+}
+
+/* 🌀 Animación flotante del GIF */
+.hero-gif {
+  width: 400px; /* Tamaño del GIF */
+  height: auto; /* Mantiene proporción */
+  margin-bottom: 1rem; /* Espacio debajo del gif */
+  filter: drop-shadow(0 0 6px var(--morado)); /* Sombra con tono morado */
+  animation: flotar 3s ease-in-out infinite; /* Animación de flotación infinita */
+}
+
+/* 🔁 Keyframes de animación del GIF */
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); } /* Sube 10px en el medio del ciclo */
+}
+
+/* 📝 Título principal del hero */
+.hero h1 {
+  font-size: 3rem; /* Tamaño grande */
+  color: var(--blanco); /* Color blanco */
+  margin: 0.5rem 0; /* Espacio arriba y abajo */
+}
+
+/* 🌈 Parte del nombre destacado */
+.hero h1 span {
+  color: var(--morado); /* Color morado para destacar */
+}
+
+/* 📄 Párrafo descriptivo */
+.hero p {
+  font-size: 1.2rem; /* Tamaño de texto más grande que el normal */
+  margin-top: 1rem;
+  color: var(--gris-suave); /* Gris claro para contraste */
+  max-width: 700px; /* Ancho máximo para que no se vea demasiado extendido */
+}
+
+/* 🎯 Contenedor de los botones */
+.hero-buttons {
+  margin-top: 2rem; /* Espacio arriba de los botones */
+  display: flex;
+  flex-wrap: wrap; /* Permite que bajen si no caben */
+  gap: 1rem; /* Espacio entre botones */
+  justify-content: center; /* Centra los botones */
+}
+
+/* 🧩 Estilos base de todos los botones */
+.btn-primary,
+.btn-secondary,
+.btn-link {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease; /* Suaviza las animaciones */
+}
+
+/* 💜 Botón principal (CV) */
+.btn-primary {
+  background-color: var(--morado); /* Fondo morado */
+  color: #fff; /* Texto blanco */
+}
+
+/* 💛 Botón secundario (proyecto) */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--dorado); /* Texto dorado */
+  border: 2px solid var(--dorado); /* Borde dorado */
+}
+
+/* 🔗 Enlaces simples con animación sutil */
+.btn-link {
+  background-color: transparent;
+  color: var(--gris-suave);
+  border-bottom: 1px solid transparent;
+}
+
+/* 🪄 Hover del botón link */
+.btn-link:hover {
+  border-bottom: 1px solid var(--morado);
+  color: var(--morado);
+}
+
+
+/* ==========================
+   🎯 Botones
+========================== */
+
+.btn-primary,
+.btn-secondary,
+.btn-link {
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+/* Botón morado */
+.btn-primary {
+  background: var(--morado);
+  color: white;
+}
+.btn-primary:hover {
+  background: var(--dorado);
+  color: #000;
+}
+
+/* Botón bordeado */
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--morado);
+  color: var(--morado);
+}
+.btn-secondary:hover {
+  background: var(--morado);
+  color: white;
+}
+
+/* Enlace simple */
+.btn-link {
+  background: none;
+  color: var(--dorado);
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+.btn-link:hover {
+  text-decoration: underline;
+}
+
+/* ==========================
+   🧠 Habilidades
+========================== */
+.skills {
+  padding: 4rem 1rem;
+  text-align: center;
+  background-color: #111;
+}
+
+.skills h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--morado);
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  padding: 0;
+  list-style: none;
+  justify-items: center;
+}
+
+.skill-grid li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--blanco);
+  font-weight: 600;
+  transition: transform 0.3s;
+}
+
+.skill-grid li:hover {
+  transform: scale(1.1);
+  color: var(--dorado);
+}
+
+.skill-grid img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.5rem;
+}
+
+/* ==========================
+   🚗 Proyectos destacados
+========================== */
+.projects-destacados {
+  padding: 4rem 1rem;
+  text-align: center;
+  background-color: #121212;
+}
+
+.projects-destacados h2 {
+  font-size: 2.5rem;
+  color: var(--morado);
+  margin-bottom: 2rem;
+}
+
+.proyecto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.2);
+}
+
+.proyecto-img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border: 2px solid var(--morado);
+}
+
+.proyecto-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--dorado);
+}
+
+.proyecto-info p {
+  margin-bottom: 1rem;
+  color: var(--gris-suave);
+  font-size: 1rem;
+}
+
+/* ==========================
+   📁 Página de Proyectos
+========================== */
+.projects-page {
+  padding: 4rem 1rem;
+  text-align: center;
+  background-color: var(--negro);
+}
+
+.projects-page h1 {
+  color: var(--morado);
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.2);
+  text-align: center; /* centramos todo el contenido */
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centra horizontalmente */
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card img {
+  width: 60%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 2px solid var(--morado);
+  display: block;
+}
+
+.project-card h2 {
+  color: var(--dorado);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  color: var(--gris-suave);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.project-card a.btn-secondary {
+  margin-top: auto;
+  align-self: center;
+}
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
+/* ==========================
+   🧭 Navbar Centrado Refinado
+========================== */
+.navbar-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a1a;
+  padding: 1.2rem 3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  gap: 1.5rem;
+}
+
+/* Partes laterales */
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 2rem; /* más espacio entre enlaces */
+}
+
+/* Logo centrado visualmente */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.logo img {
+  height: 65px; /* más alto y proporcional al texto del nav */
+  width: auto;
+  filter: drop-shadow(0 0 5px var(--morado));
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* ==========================
+   🌐 Enlaces del Menú refinados
+========================== */
+.nav-left a,
+.nav-right a {
+  position: relative;
+  text-decoration: none;
+  color: var(--gris-suave);
+  font-weight: 500;
+  font-size: 1.3rem;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Línea dorada animada al hover */
+.nav-left a::after,
+.nav-right a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: var(--dorado);
+  transition: width 0.3s ease;
+}
+
+.nav-left a:hover::after,
+.nav-right a:hover::after {
+  width: 100%;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+  color: var(--dorado);
+  transform: scale(1.05);
+}
+
+/* Enlace activo */
+.nav-left .active,
+.nav-right .active {
+  color: var(--morado);
+  font-weight: bold;
+}
+/* ==========================
+   FOOTER
+========================== */
+footer {
+  background-color: #111;
+  color: var(--gris-suave);
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  border-top: 2px solid var(--morado);
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.footer-text {
+  margin-bottom: 1rem;
+  color: var(--gris-suave);
+  font-weight: 400;
+}
+
+.footer-icons a {
+  display: inline-block;
+  margin: 0 0.5rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-icons a:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 6px var(--morado));
+}
+
+.footer-icon {
+  width: 36px;
+  height: 36px;
+  padding: 3px;
+  border-radius: 50%;
+  background-color: var(--morado);
+  filter: brightness(1.2);
+  transition: background-color 0.3s ease, filter 0.3s ease;
+}
+
+.footer-icon:hover {
+  background-color: var(--dorado);
+  filter: brightness(1.3) drop-shadow(0 0 5px var(--dorado));
+}
+
+/* ==========================
+   PARA MOVILES
+========================== */
+@media (max-width: 768px) {
+  /* Estilos para pantallas pequeñas */
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
